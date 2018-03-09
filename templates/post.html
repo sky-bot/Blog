@@ -77,7 +77,13 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <p>{{ user['blogcontent']|safe }}</p>
+
            
+
+            <form name="addForm" id="addForm" method ="POST" action = "{{ url_for('post', p_id = user['post_id']) }}" >
+              <button style="background-color: #4CAF50;margin: 10px;" type="submit" name="submit" value="claps">Upvotes {{ user['claps'] }}</button>
+            </form>
+
           </div>
         </div>
       </div>
