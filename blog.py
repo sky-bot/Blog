@@ -28,12 +28,6 @@ def index():
 def about():
 	return render_template('about.html')
 
-@app.route('/post/<int:p_id>')
-def post(p_id):
-	db = client['user'] 
-	user = mongo.db.user
-	user = user.find_one({'post_id': p_id})
-	return render_template('post.html',user = user)
 
 @app.route('/post/<int:p_id>', methods=['POST','GET'])
 def post(p_id):
