@@ -1,8 +1,10 @@
 from flask import Flask ,render_template, request, redirect, url_for
-from flask.ext.pymongo import PyMongo
+#from flask.ext.pymongo import PyMongo
+from flask_pymongo import PyMongo
 from pymongo import MongoClient
 from datetime import datetime
 import pymongo
+
 
 client = MongoClient('mongodb://sky-bot:GOLDENdiamond10@ds147228.mlab.com:47228/pblog')
 
@@ -44,11 +46,6 @@ def post(p_id):
 			user.save(user1)
 
 	print(claps)
-
-
-
-
-
 	return render_template('post.html',user = user1)
 
 
@@ -71,9 +68,7 @@ def addpost():
 	claps = "0"
 	user.insert({'post_id': post_id, 'title': request.form['title'], 'subtitle':request.form['subtitle'], 'author': request.form['author'],
 	 'blogcontent': request.form['blogcontent'],'datetime': datetime.now(),'claps' : claps})
-	
-	
-	
+			
 	return redirect(url_for('index'))
 
 if __name__ == '__main__':
