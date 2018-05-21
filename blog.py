@@ -10,10 +10,7 @@ from werkzeug.contrib.fixers import ProxyFix
 client = MongoClient('mongodb://sky-bot:GOLDENdiamond10@ds147228.mlab.com:47228/pblog')
 
 app = Flask(__name__)
-
-if __name__ == '__main__':
-	app.secret_key = 'itcanbeanything'
-	app.run(debug=True)
+app.config['SECRET_KEY'] = '1354854kugsd6f4sd6f6sd4fs6d4fsdf'
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
 
@@ -110,5 +107,4 @@ def addpost():
 	return redirect(url_for('index'))
 
 if __name__ == '__main__':
-	app.secret_key = 'itcanbeanything'
 	app.run(debug=True)
