@@ -10,6 +10,11 @@ from werkzeug.contrib.fixers import ProxyFix
 client = MongoClient('mongodb://sky-bot:GOLDENdiamond10@ds147228.mlab.com:47228/pblog')
 
 app = Flask(__name__)
+
+if __name__ == '__main__':
+	app.secret_key = 'itcanbeanything'
+	app.run(debug=True)
+
 app.wsgi_app = ProxyFix(app.wsgi_app)
 
 app.config['MONGO_DB'] = 'pblog'
