@@ -39,8 +39,8 @@ def index():
 	if q:
 		search = True
 	
-	pagination = Pagination(page=page,per_page=per_page, offset=offset, total=user.count(), search=search, record_name='user')
-	return render_template('index.html', user= user, pagination = pagination)
+	
+	return render_template('index.html', user= user)
 
 
 @app.route('/about')
