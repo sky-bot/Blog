@@ -3,7 +3,7 @@ from flask_pymongo import PyMongo
 from pymongo import MongoClient
 from datetime import datetime
 import pymongo
-from flask_paginate import Pagination, get_page_parameter, get_page_args
+
 from flask_dance.contrib.github import make_github_blueprint, github
 from flask_dance.contrib.google import make_google_blueprint, google
 from werkzeug.contrib.fixers import ProxyFix
