@@ -21,27 +21,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static',filename='clean-blog.min.css') }}" rel="stylesheet">
 
-    <style type="text/css">
-      
-      .pagination-page-info 
-      {
-          padding: .6em;
-          padding-left: 0;
-          width: 40em;
-          margin: .5em;
-          margin-left: 0;
-          font-size: 12px;
-      }
-
-      .pagination-page-info b 
-      {
-          color: black;
-          background: #6aa6ed;
-          padding-left: 2px;
-          padding: .1em .25em;
-          font-size: 150%;
-      }
-    </style>
+   
 
   </head>
 
@@ -98,8 +78,7 @@
         <div class="col-lg-6 col-md-6 col-sm-12 col-xm-12 mx-auto" style="clear: right;">
           <div  class="text-center" style="display:inline-block;clear: right;" >
 
-          {{ pagination.info }}
-          {{ pagination.links }}
+         
           {% for use in user %}
             <div class="text-center" style="clear: right;" >
             <a style="text-decoration: none;clear: right;" href="{{ url_for('post', p_id = use['post_id']) }}">
@@ -117,7 +96,7 @@
           <hr>
           </div>
           {% endfor %}
-          {{ pagination.links }}
+       
           <!-- Pager -->
           
         </div>
